@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { StyleSheet, Text, View, Modal, Alert, Pressable } from 'react-native';
+import { StyleSheet, Text, View, Pressable } from 'react-native';
 import ModalText from './components/ModalText';
 
 export default function App() {
@@ -27,19 +27,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  modalView: {
-    margin: 20,
-    backgroundColor: '#aaa',
-    borderRadius: 20,
-    padding: 35,
-    alignItems: 'center',
-    width: '100%'
-  },
-  modalText: {
-    marginBottom: 60,
-  },
-  modalTextClose: {
-    fontWeight: 'bold',
-  },
+  }
 });
