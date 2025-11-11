@@ -1,32 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { StyleSheet, Text, View, Modal, Alert, Pressable } from 'react-native';
-
+import ModalText from './components/ModalText';
 
 export default function App() {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
     <View style={styles.container}>
-      <Modal
-        animationType='slide'
-        transparent={true}
+      <ModalText
         visible={modalVisible}
-        onRequestClose={() => {
-          Alert.alert('Modal has been closed.');
-          setModalVisible(!modalVisible);
-        }}>
-        <View style={styles.container}>
-          <View style={styles.modalView}>
-            <Text style={styles.modalText}>This is modal..</Text>
-            <Pressable
-              onPress={() => setModalVisible(!modalVisible)}
-            >
-              <Text style={styles.modalTextClose}>Close</Text>
-            </Pressable>
-          </View>
-        </View>
-      </Modal>
+        onClose={() => setModalVisible(false)}
+      />
       <Pressable
         onPress={() => setModalVisible(true)}>
         <Text>Show modal message</Text>
